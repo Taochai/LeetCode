@@ -8,7 +8,7 @@ public class Leetcode3LongestSubstringWithoutRepeatingCharacters {
 //用HashSet存出现过的Character
 //同步更新ans
 //time complexity O(n)
-class Solution {
+class Solution3 {
     public int lengthOfLongestSubstring(String s) {
         //corner case
         if(s.length()==0) return 0;
