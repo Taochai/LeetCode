@@ -1,6 +1,7 @@
 // 1st time
 // 对于nums1里的每一个数，index i，在nums2 i之后找比他大的。找不到返回-1,找到了返回那个值。
 // time complexity: O(n*n)
+// 2nd time 用stack写了一遍。在stack里的比curr小的数，其下一个最大的就是curr。
 public class Leetcode496NextGreatElement1 {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         // corner case:
@@ -66,3 +67,21 @@ public class Leetcode496NextGreatElement1 {
 //        }
 //        return ans;
 //    }
+//public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+//    Stack<Integer> s = new Stack<>();
+//    Map<Integer,Integer> m = new HashMap<>();
+//    for(int i=0;i<nums2.length;i++){
+//        while(!s.isEmpty() && s.peek()<nums2[i]){
+//            m.put(s.pop(),nums2[i]);
+//        }
+//        s.push(nums2[i]);
+//    }
+//    while(!s.isEmpty()){
+//        m.put(s.pop(),-1);
+//    }
+//    int[] ans = new int[nums1.length];
+//    for(int i=0;i<nums1.length;i++){
+//        ans[i] = m.get(nums1[i]);
+//    }
+//    return ans;
+//}
