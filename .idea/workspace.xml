@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="37bdaf4f-156d-4776-a4fc-77fb5f2b3da2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\github\leetcodeNew\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1VHF3McSYdxEBgzLSypJeMEdvAE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSHint" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\github\leetcodeNew\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.test">
+    <configuration name="Leetcode2AddTwoNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Leetcode2AddTwoNumbers" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="leetcode438" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode438" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.Leetcode2AddTwoNumbers" />
+        <item itemvalue="Application.leetcode438" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37bdaf4f-156d-4776-a4fc-77fb5f2b3da2" name="Default Changelist" comment="" />
+      <created>1576901913668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576901913668</updated>
+      <workItem from="1576901918636" duration="1492000" />
+      <workItem from="1577021082690" duration="514000" />
+      <workItem from="1578067324039" duration="3128000" />
+      <workItem from="1579014304168" duration="3583000" />
+      <workItem from="1579022356354" duration="168000" />
+      <workItem from="1579023614810" duration="116000" />
+      <workItem from="1579024272685" duration="176000" />
+      <workItem from="1579024598341" duration="3886000" />
+      <workItem from="1580145249685" duration="3290000" />
+      <workItem from="1580239743107" duration="2479000" />
+      <workItem from="1580391877382" duration="108000" />
+    </task>
+    <task id="LOCAL-00001" summary="leetcode update">
+      <created>1576902383096</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576902383096</updated>
+    </task>
+    <task id="LOCAL-00002" summary="leetcode3 update">
+      <created>1577003555748</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577003555748</updated>
+    </task>
+    <task id="LOCAL-00003" summary="leetcode3 update">
+      <created>1577021219507</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577021219507</updated>
+    </task>
+    <task id="LOCAL-00004" summary="leetcode127 update">
+      <created>1577021272701</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1577021272701</updated>
+    </task>
+    <task id="LOCAL-00005" summary="leetcode496 update">
+      <created>1578076101319</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578076101319</updated>
+    </task>
+    <task id="LOCAL-00006" summary="leetcode545 update">
+      <created>1578084302362</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578084302362</updated>
+    </task>
+    <task id="LOCAL-00007" summary="leetcode6 update">
+      <created>1580149794678</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580149794678</updated>
+    </task>
+    <task id="LOCAL-00008" summary="leetcode1268 update">
+      <created>1580151946088</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580151946088</updated>
+    </task>
+    <task id="LOCAL-00009" summary="leetcode7 1st time">
+      <created>1580241087659</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580241087659</updated>
+    </task>
+    <task id="LOCAL-00010" summary="leetcode122 1st time">
+      <created>1580282754201</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580282754201</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="leetcode update" />
+    <MESSAGE value="leetcode3 update" />
+    <MESSAGE value="leetcode127 update" />
+    <MESSAGE value="leetcode496 update" />
+    <MESSAGE value="leetcode545 update" />
+    <MESSAGE value="leetcode6 update" />
+    <MESSAGE value="leetcode1268 update" />
+    <MESSAGE value="leetcode7 1st time" />
+    <MESSAGE value="leetcode122 1st time" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode122 1st time" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="0" key="#Project_Structure" timestamp="1576901926643">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1576901926643" />
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1580392060665">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577021272271" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680/3.-1080.1920.1040@0.0.1280.680" timestamp="1580282753069" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1580392060665" />
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1579027540814">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1579027540814" />
+    <state x="523" y="234" width="258" height="213" key="Github.ShareDialog" timestamp="1576902465720">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="523" y="234" width="258" height="213" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1576902465720" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1580391971244">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577004525721" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580391971244" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1580391971243">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577004525721" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580391971243" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1580391971243">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577004525721" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580391971243" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1580391971244">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577004525721" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580391971244" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1579017105486">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1579017105486" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1580392078795">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577021285094" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/3.-1080.1920.1040@0.0.1280.680" timestamp="1580282766533" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1580392078795" />
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1580391916759">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1577021086231" />
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680/3.-1080.1920.1040@0.0.1280.680" timestamp="1580239745960" />
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1580391916759" />
+    <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580145271490">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1580145271490" />
+    <state x="375" y="132" key="git4idea.merge.GitPullDialog" timestamp="1580391926934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="375" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1580391926934" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1579017020137">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1579017020137" />
+  </component>
+</project>
