@@ -1,5 +1,11 @@
 import java.util.Stack;
 
+
+/*
+    1st time
+    while循环确保k大于i
+    if条件确保k小于j
+ */
 public class leetcode456Pattern132 {
     public boolean find132pattern(int[] nums) {
         if (nums.length < 3)
