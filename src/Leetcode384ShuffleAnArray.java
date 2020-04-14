@@ -14,11 +14,12 @@ public class Leetcode384ShuffleAnArray {
 
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
-        int[] rand = new int[original.length];
+        int[] rand = this.original.clone();
         for (int i = 0; i < rand.length; i++){
             int r = (int) (Math.random() * (i+1));
-            rand[i] = rand[r];
-            rand[r] = original[i];
+            int tmp = rand[r];
+            rand[r] = rand[i];
+            rand[i] = tmp;
         }
         return rand;
     }
