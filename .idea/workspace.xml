@@ -465,10 +465,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2608" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591080408272" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1595537311958">
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1595537330632">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595537311958" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595537330632" />
     <state x="2318" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594707917754" />
     <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1588022431381" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1595051642156">
@@ -509,22 +509,22 @@
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595259556334" />
     <state x="2133" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595343712962" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1595083628337">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1595563041597">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595083628337" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595563041597" />
     <state x="2270" y="112" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594707972394" />
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1587243318255" />
-    <state x="2426" y="251" key="com.intellij.ide.util.TipDialog" timestamp="1595343390200">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1595562984738">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1594759228046" />
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595562984738" />
     <state x="2426" y="251" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595343390200" />
     <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1587237546233" />
-    <state x="2483" y="202" key="git4idea.merge.GitPullDialog" timestamp="1595534713269">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="375" y="132" key="git4idea.merge.GitPullDialog" timestamp="1595563004426">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="375" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1594232475667" />
+    <state x="375" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1595563004426" />
     <state x="2483" y="202" key="git4idea.merge.GitPullDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595534713269" />
     <state x="375" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1588022370441" />
     <state x="91" y="42" key="new project wizard" timestamp="1594759854707">
