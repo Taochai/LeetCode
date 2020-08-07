@@ -31,7 +31,9 @@ public class Artifacts {
             for(int i=leftTop[0];i<=rightBot[0];i++){
                 for (int j=leftTop[1];j<=rightBot[1];j++){
                     if(grid[i][j]==1){
+
                         count++;
+
                     }
                 }
             }
