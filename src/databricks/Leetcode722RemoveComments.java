@@ -3,7 +3,7 @@ package databricks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Leetcode722 {
+public class Leetcode722RemoveComments {
 
         public List<String> removeComments(String[] source) {
             boolean block = false;

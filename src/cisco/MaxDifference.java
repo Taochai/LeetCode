@@ -23,3 +23,15 @@ public class MaxDifference {
         return ans;
     }
 }
+//         int ans = Integer.MIN_VALUE;
+// 		int max = numArr[n-1];
+// 		for(int i=n-2;i>=0;i--){
+// 		    if(numArr[i]>max){
+// 		        max = numArr[i];
+// 		    }else{
+// 		        int difference = max-numArr[i];
+// 		        if(difference>ans){
+// 		            ans = difference;
+// 		        }
+// 		    }
+//
