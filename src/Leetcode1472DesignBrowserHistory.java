@@ -49,3 +49,29 @@ public class Leetcode1472DesignBrowserHistory {
  * String param_3 = obj.forward(steps);
  */
 }
+
+//class BrowserHistory {
+//    static String[] log;
+//    int top, curr;
+//    public BrowserHistory(String homepage) {
+//        log = new String[128];
+//        log[top++] = homepage;
+//    }
+//
+//    public void visit(String url) {
+//        log[++curr] = url;
+//        top = curr;
+//        top++;
+//    }
+//
+//    public String back(int steps) {
+//        curr -= curr < steps ? curr : steps;
+//        return log[curr];
+//    }
+//
+//    public String forward(int steps) {
+//        int other = top - curr - 1;
+//        curr += other < steps ? other : steps;
+//        return log[curr];
+//    }
+//}
