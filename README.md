@@ -1,6 +1,6 @@
 - [leetcode](#leetcode)
-  * [反射](#--)
-    + [动态代理](#----)
+    - [反射](#反射)
+        - [动态代理](#动态代理)
 
 # leetcode
 
@@ -107,15 +107,20 @@ java三种代理模式
    ```
 
    ```java
-   package basicKnowledge.dynamicProxy;
-
-public class dynamicProxyUsingCglib {
-    public static void main(String[] args) {
-        UserImpl user = new UserImpl();
-        ProxyFactory proxyFactory = new ProxyFactory(user);
-        UserImpl proxyInstance = (UserImpl) proxyFactory.getProxyInstance();
-        proxyInstance.hello();
-    }
-}
+     package basicKnowledge.dynamicProxy;
+   
+     public class dynamicProxyUsingCglib {
+         public static void main(String[] args) {
+             UserImpl user = new UserImpl();
+             ProxyFactory proxyFactory = new ProxyFactory(user);
+             UserImpl proxyInstance = (UserImpl)proxyFactory.getProxyInstance();
+             proxyInstance.hello();
+         }
+     }
    ```
+
+
+
+
+
 
