@@ -119,8 +119,79 @@ java三种代理模式
      }
    ```
 
+## 注解
 
+注解（Annotation）是Java语言用于工具处理的标注.
 
+### 三类注解
 
+- 编译器使用的注解（@Override @SuppressWarnings）
 
+  这类注解不会被编译进入`.class`文件，它们在编译后就被编译器扔掉了
+
+- 编译进``` .class``` 文件，在结束后不存在内存中。
+
+- 程序运行期能够读取的注解，加载后一直存在于JVM中。(@PostConstruct)
+
+### 元注解
+
+​ 可以修饰其他注解的注解。
+
+- @Target
+
+- @Retention
+
+    1. `SOURCE`类型的注解在编译期就被丢掉了；
+    2. `CLASS`类型的注解仅保存在class文件中，它们不会被加载进JVM；
+    3. `RUNTIME`类型的注解会被加载进JVM，并且在运行期可以被程序读取。
+
+- @Repeatable
+
+- @Inherited
+
+  使用`@Inherited`定义子类是否可继承父类定义的`Annotation`。`@Inherited`仅针对`@Target(ElementType.TYPE)`类型的`annotation`有效，并且仅针对`class`
+  的继承，对`interface`的继承无效.
+
+  在使用的时候，如果一个类用到了`@Report`：
+
+  ```java
+  @Report(type=1)
+  public class Person {
+  }
+  ```
+
+  则它的子类默认也定义了该注解：
+
+  ```java
+  public class Student extends Person {
+  }
+  ```
+
+**总结**：必须设置`@Target`来指定`Annotation`可以应用的范围；应当设置`@Retention(RetentionPolicy.RUNTIME)`便于运行期读取该`Annotation`。
+
+### 处理注解 ###
+
+​ 对于作用在runtime的注解:
+
+	判断某个注解是否存在:
+
+- `Class.isAnnotationPresent(Class)`
+
+- `Field.isAnnotationPresent(Class)`
+
+- `Method.isAnnotationPresent(Class)`
+
+- `Constructor.isAnnotationPresent(Class)`
+
+  反射API读取Annotation：
+
+- `Class.getAnnotation(Class)`
+
+- `Field.getAnnotation(Class)`
+
+- `Method.getAnnotation(Class)`
+
+- `Constructor.getAnnotation(Class)`
+
+    
 
