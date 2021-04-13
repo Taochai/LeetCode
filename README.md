@@ -1,6 +1,16 @@
 - [leetcode](#leetcode)
     - [反射](#反射)
         - [动态代理](#动态代理)
+    - [注解](#注解)
+        - [三类注解](#三类注解)
+        - [元注解](#元注解)
+        - [处理注解（反射）](#处理注解反射)
+    - [多线程](#多线程)
+        - [概念](#概念)
+        - [创建](#创建)
+        - [生命周期](#生命周期)
+        - [同步](#同步)
+        - [通信](#通信)
 
 # leetcode
 
@@ -135,7 +145,7 @@ java三种代理模式
 
 ### 元注解
 
-​ 可以修饰其他注解的注解。
+可以修饰其他注解的注解。
 
 - @Target
 
@@ -146,6 +156,8 @@ java三种代理模式
     3. `RUNTIME`类型的注解会被加载进JVM，并且在运行期可以被程序读取。
 
 - @Repeatable
+
+- @Documented
 
 - @Inherited
 
@@ -167,11 +179,13 @@ java三种代理模式
   }
   ```
 
+
+
 **总结**：必须设置`@Target`来指定`Annotation`可以应用的范围；应当设置`@Retention(RetentionPolicy.RUNTIME)`便于运行期读取该`Annotation`。
 
-### 处理注解 ###
+### 处理注解（反射） ###
 
-​ 对于作用在runtime的注解:
+对于作用在runtime的注解:
 
 	判断某个注解是否存在:
 
@@ -193,5 +207,50 @@ java三种代理模式
 
 - `Constructor.getAnnotation(Class)`
 
-    
+## 多线程 ##
+
+### 创建线程
+
+1. extends Thread
+
+- One is to declare a class to be a subclass of Thread.
+
+- This subclass should override the run method of class Thread.
+
+An instance of the subclass can then be allocated and started.
+
+```java
+   class PrimeThread extends Thread {
+    long minPrime;
+
+    PrimeThread(long minPrime) {
+        this.minPrime = minPrime;
+    }
+
+    public void run() {
+        // compute primes larger than minPrime
+            . . .
+    }
+}
+```
+
+- The following code would then create a thread and start it running:
+
+``` java
+         PrimeThread p = new PrimeThread(143);
+         p.start();
+```
+
+start()：开启新的线程 + 执行run()方法
+
+2.
+3.
+
+### 生命周期
+
+### 同步
+
+解决安全问题
+
+### 通信
 
