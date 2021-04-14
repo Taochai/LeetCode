@@ -234,7 +234,7 @@ An instance of the subclass can then be allocated and started.
 }
 ```
 
-- The following code would then create a thread and start it running:
+- The following code would then **create a thread** and **start it running**:
 
 ``` java
          PrimeThread p = new PrimeThread(143);
@@ -243,10 +243,50 @@ An instance of the subclass can then be allocated and started.
 
 start()：开启新的线程 + 执行run()方法
 
-2.
+2. implement runnable
+
+- Declare a class that implements the Runnable interface.
+
+- That class then implements the run method.
+
+- An instance of the class can then be allocated, passed as an argument when creating Thread, and started.
+
+```java
+   class PrimeRun implements Runnable {
+    long minPrime;
+
+    PrimeRun(long minPrime) {
+        this.minPrime = minPrime;
+    }
+
+    public void run() {
+        // compute primes larger than minPrime
+            . . .
+    }
+}
+```
+
+The following code would then create a thread and start it running:
+
+```java       
+			PrimeRun p = new PrimeRun(143);
+       new Thread(p).start();
+```
+
+优势：
+
+- 没有单继承的局限性
+- 共享数据
+
 3.
 
-### 生命周期
+### Method
+
+- *yield* 释放当前CPU执行权
+- *join*  在线程a中调用线程b.join()，a进入阻塞状态，b执行完后，a才结束阻塞状态
+- sleep
+
+### 生命周期   ![Thread LifeCycle](/Users/tao.chai/Downloads/Thread LifeCycle.jpg)
 
 ### 同步
 
