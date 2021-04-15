@@ -286,11 +286,105 @@ The following code would then create a thread and start it running:
 - *join*  在线程a中调用线程b.join()，a进入阻塞状态，b执行完后，a才结束阻塞状态
 - sleep
 
-### 生命周期   ![Thread LifeCycle](/Users/tao.chai/Downloads/Thread LifeCycle.jpg)
+### 生命周期   ![Thread LifeCycle](src/main/resources/Thread%20LifeCycle.jpg)
 
 ### 同步
 
-解决安全问题
+解决安全问题(操作共享数据引起)。
+
+- 同步代码块
+
+```java
+synchronized(同步监视器){
+        //需要被同步的代码---操作共享数据的代码
+        //多个线程共同操作的数据
+        }
+```
+
+同步监视器：锁. 任何一个类的对象，都可以充当锁. 多个线程必须共用一把锁
+
+```java
+  //存在线程安全问题，重票
+private static int ticket=100;
+
+@Override
+public void run(){
+        while(true){
+synchronized (Window.class){
+        if(ticket<=0){
+        break;
+        }
+        try{
+        Thread.sleep(100);
+        }catch(InterruptedException e){
+        e.printStackTrace();
+        }
+        System.out.println("window---"+getName()+"---ticket: "+ticket--);
+        }
+        }
+        }
+```
+
+*Window.class 是Class的对象*, 并且只会加载一次。
+
+- 同步方法
+
+  同步监视器：非静态方法---```this```；静态方法---当前类``` xxx.class```
+
+```java
+class WindowRunnable implements Runnable {
+    private int ticket = 100;
+
+    @Override
+    public void run() {
+        while (true) {
+            if (saleTicket()) break;
+        }
+    }
+
+    //同步监视器：this
+    private synchronized boolean saleTicket() {
+        if (ticket > 0) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("window---" + Thread.currentThread().getName() + "---ticket: " + ticket--);
+        } else {
+            return true;
+        }
+        return false;
+    }
+}
+```
+
+```java
+class Window extends Thread {
+    //存在线程安全问题，重票
+    private static int ticket = 100;
+
+    @Override
+    public void run() {
+        while (true) {
+            if (saleTicket()) break;
+        }
+    }
+
+    private static synchronized boolean saleTicket() { //同步监视器: this 加了static后，同步监视器变成: Window.class
+        if (ticket <= 0) {
+            return true;
+        }
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("window---" + Thread.currentThread().getName() + "---ticket: " + ticket--);
+        return false;
+    }
+}
+```
 
 ### 通信
 
