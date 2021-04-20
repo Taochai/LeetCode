@@ -527,13 +527,6 @@ class PrintNumber implements Runnable {
     2. 调用场景不同，```sleep()```在任何场景下调用，```wait()```必须在同步代码块/同步方法中调用
     3. 是否释放同步监视器：如果两个方法都使用在同步代码块/同步方法中，```sleep()```不释放同步监视器，```wait()```释放同步监视器。
 
-# 经验总结
-
-## @GetMapping & @RequestBody
-
-在实际项目中```@GetMapping```方法和```@RequestBody``` 一起使用会出错，建议使用```@PutMapping```+```@RequestBody```
-，但是在自己的测试程序中，用postMan测试，是可以用```@GetMapping``` 和```@RequestBody```的组合。
-
 ## 日志
 
 日志就是Logging，它的目的是为了取代`System.out.println()`。
@@ -544,5 +537,199 @@ class PrintNumber implements Runnable {
 2. 可以设置输出级别，禁止某些级别输出。例如，只输出错误日志；
 3. 可以被重定向到文件，这样可以在程序运行结束后查看日志；
 4. 可以按包名控制日志级别，只输出某些包打的日志；
-5. 可以……
+
+### JDK Logger
+
+  ```java
+  private static final Level[]standardLevels={
+        OFF,SEVERE,WARNING,INFO,CONFIG,FINE,FINER,FINEST,ALL
+        }
+  ```
+
+默认级别是INFO,INFO以下的日志不会被打印。
+
+  ```java
+  import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class JDKLogDemo {
+    public static void main(String[] args) {
+        Logger logger = Logger.getGlobal();
+        //        Logger logger = Logger.getLogger("test name");
+        //        Logger logger = Logger.getLogger(JDKLogDemo.class.getName());
+
+        //        Handler console = new ConsoleHandler();
+        //        console.setLevel(Level.FINEST);
+        //        logger.addHandler(console);
+
+        logger.setLevel(Level.FINEST);
+
+        logger.severe("process will be terminated...");
+        logger.warning("memory is running out...");
+        logger.info("start process...");
+        logger.fine("ignored.");
+        logger.finest("finest msg");
+    }
+}
+  ```
+
+![logLevel](src/main/resources/logLevel.png)
+
+### log4j
+
+### logback
+
+### Commons Logging(抽象，门面接口)
+
+一个第三方提供的库(门面接口)
+
+  ```java
+  package log;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+public class CommonsLoggingDemo {
+    public static void main(String[] args) {
+        Log log = LogFactory.getLog(CommonsLoggingDemo.class);
+
+        log.debug("debug msg");
+        log.info("info msg");
+        log.warn("warn msg");
+        log.fatal("fatal msg");
+    }
+}
+  ```
+
+### SLF4J(抽象，门面接口) *
+
+Simple Logging Facade for Java (abbreviated SLF4J) – acts as a [facade](https://en.wikipedia.org/wiki/Facade_pattern)
+for different logging frameworks (e.g. [java.util.logging, logback, Log4j](https://www.baeldung.com/java-logging-intro))
+. It offers a generic API making the logging independent of the actual implementation.
+
+This allows for different logging frameworks to coexist. It also helps migrate from one framework to another.
+
+***Introduction to SLF4J:  www.baeldung.com/slf4j-with-log4j2-logback***
+
+![logLevel](src/main/resources/log.png)
+
+- slf4j + logback
+
+  ```java
+  import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/*
+ * slf4j + logback
+ * logback.xml
+ * */
+public class Slf4jDemo {
+    public static void main(String[] args) {
+        Logger logger = LoggerFactory.getLogger(Slf4jDemo.class);
+
+        logger.trace("trace");
+        logger.debug("debug");
+        logger.info("info");
+        logger.warn("warn");
+        logger.error("error {}", "AnyParams");
+    }
+}
+  ```
+
+  ```xml
+
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.30</version>
+</dependency>
+<dependency>
+<groupId>ch.qos.logback</groupId>
+<artifactId>logback-classic</artifactId>
+<version>1.2.3</version>
+</dependency>
+  ```
+
+logback.xml
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>projectName</contextName>
+    <property name="contextName" value="projectName"/>
+    <property name="log_dir" value="./logs/"/>
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 级别过滤器。如果日志级别低于WARN，将被过滤掉。 ALL TRACE DEBUG INFO WARN ERROR-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %msg - %file:%line%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 每天记录info级别日志文件 -->
+    <appender name="InfoRollingFileAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Prudent>true</Prudent>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %msg - %file:%line%n</Pattern>
+        </layout>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log_dir}/${contextName}_info%d{yyyy-MM-dd}.log
+            </FileNamePattern>
+        </rollingPolicy>
+        <!-- 级别过滤器。如果日志级别低于WARN，将被过滤掉。ALL TRACE DEBUG INFO WARN ERROR-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <!-- 除了DEBUG级别的日志，其它什么级别的日志都不要 -->
+        <!-- <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY </onMismatch>
+        </filter> -->
+    </appender>
+
+    <!-- 每天记录ERROR级别日志文件 -->
+    <appender name="ErrorRollingFileAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Prudent>true</Prudent>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %msg - %file:%line%n</Pattern>
+        </layout>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log_dir}/${contextName}_error%d{yyyy-MM-dd}.log
+            </FileNamePattern>
+        </rollingPolicy>
+        <!-- 级别过滤器。如果日志级别低于WARN，将被过滤掉。 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <!-- 除了DEBUG级别的日志，其它什么级别的日志都不要 -->
+        <!-- <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY </onMismatch>
+        </filter> -->
+    </appender>
+
+    <root>
+        <appender-ref ref="console"/>
+        <appender-ref ref="InfoRollingFileAppender"/>
+        <appender-ref ref="ErrorRollingFileAppender"/>
+    </root>
+</configuration>
+  ```
+
+# 经验总结
+
+## @GetMapping & @RequestBody
+
+在实际项目中```@GetMapping```方法和```@RequestBody``` 一起使用会出错，建议使用```@PutMapping```+```@RequestBody```
+，但是在自己的测试程序中，用postMan测试，是可以用```@GetMapping``` 和```@RequestBody```的组合。
 
