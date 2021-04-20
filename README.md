@@ -1,4 +1,4 @@
-- [leetcode](#leetcode)
+- [ leetcode](#leetcode)
     - [反射](#反射)
         - [动态代理](#动态代理)
     - [注解](#注解)
@@ -278,7 +278,60 @@ The following code would then create a thread and start it running:
 - 没有单继承的局限性
 - 共享数据
 
-3.
+3. **Implements Callable**(JDK5.0)
+
+    1. 有返回值
+
+    2. 可以抛异常
+
+    3. 支持范型的返回值
+
+    4. 需要借助FutureTask类，比如获取返回结果
+
+```java
+      package basicKnowledge.multiThread;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
+public class WindowTicketUsingCallable {
+    public static void main(String[] args) {
+        WindowCallable windowCallable = new WindowCallable();
+
+        FutureTask<Integer> futureTask = new FutureTask<>(windowCallable);
+
+        new Thread(futureTask).start();
+
+        try {
+            Integer sum = futureTask.get();
+            System.out.println("sum = " + sum);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class WindowCallable implements Callable<Integer> {
+    private int ticketNumber = 100;
+
+    @Override
+    public Integer call() {
+        int sum = 0;
+        while (ticketNumber > 0) {
+            ticketNumber--;
+            sum += 2;
+        }
+        return sum;
+    }
+}
+```
+
+4. 线程池(JDK5.0)
+
+    1. 提高响应速度（减少创建线程的时间）
+    2. 降低资源消耗（重复利用线程池中的线程，避免每次都创建线程）
+    3. 便于线程管理
 
 ### Method
 
@@ -290,7 +343,7 @@ The following code would then create a thread and start it running:
 
 ### 同步
 
-解决安全问题(操作共享数据引起)。
+解决**安全问题**(操作共享数据引起)。
 
 - 同步代码块
 
@@ -386,5 +439,110 @@ class Window extends Thread {
 }
 ```
 
+- LOCK
+
+```java
+class WindowRunnable1 implements Runnable {
+    private int ticket = 100;
+    Lock lock = new ReentrantLock();
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                lock.lock();
+
+                if (ticket > 0) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("window---" + Thread.currentThread().getName() + "---ticket: " + ticket--);
+                } else {
+                    break;
+                }
+            } finally {
+                lock.unlock();
+            }
+        }
+    }
+}
+```
+
+**对比 syncronized和Lock**：
+
+Lock是显示锁，syncronized是隐示锁，出了作用域自动释放。
+
+Lock只能用在代码块，syncronized可以用在代码块和方法。
+
 ### 通信
+
+```java
+public final native void wait(long timeoutMillis)throws InterruptedException; //当前线程进入阻塞状态，释放同步监视器。
+public final native void notify(); //唤醒wait的一个线程，优先唤醒优先级高的线程。
+public final native void notifyAll(); //唤醒所有被wait的线程。
+```
+
+*都是native方法，不用Thread.currentThread().wait()，方法调用者必须是被使用的同步监视器，否则会报错：``` IllegalMonitorStateException```
+这三个方法必须使用在 同步代码块/同步方法。Lock不适用这三个方法。*
+
+- 两个线程交替打印1-100的数字。
+
+```java
+class PrintNumber implements Runnable {
+    private int number = 1;
+
+    @Override
+    public void run() {
+
+        while (true) {
+            synchronized (this) {
+                notify();
+                if (number <= 100) {
+                    System.out.println(Thread.currentThread().getName() + "------" + number);
+                    number++;
+
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+}
+```
+
+- **🤔sleep() VS wait()**
+
+  **相同点**：都会让线程进入阻塞状态
+
+  **不同点**：
+
+    1. 声明位置不同，Thread中声明sleep()，Object中声明wait()
+    2. 调用场景不同，```sleep()```在任何场景下调用，```wait()```必须在同步代码块/同步方法中调用
+    3. 是否释放同步监视器：如果两个方法都使用在同步代码块/同步方法中，```sleep()```不释放同步监视器，```wait()```释放同步监视器。
+
+# 经验总结
+
+## @GetMapping & @RequestBody
+
+在实际项目中```@GetMapping```方法和```@RequestBody``` 一起使用会出错，建议使用```@PutMapping```+```@RequestBody```
+，但是在自己的测试程序中，用postMan测试，是可以用```@GetMapping``` 和```@RequestBody```的组合。
+
+## 日志
+
+日志就是Logging，它的目的是为了取代`System.out.println()`。
+
+输出日志，而不是用`System.out.println()`，有以下几个好处：
+
+1. 可以设置输出样式，避免自己每次都写`"ERROR: " + var`；
+2. 可以设置输出级别，禁止某些级别输出。例如，只输出错误日志；
+3. 可以被重定向到文件，这样可以在程序运行结束后查看日志；
+4. 可以按包名控制日志级别，只输出某些包打的日志；
+5. 可以……
 

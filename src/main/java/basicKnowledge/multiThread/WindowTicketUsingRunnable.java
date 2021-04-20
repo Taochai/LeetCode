@@ -3,7 +3,7 @@ package basicKnowledge.multiThread;
 public class WindowTicketUsingRunnable {
     /*仍然存在线程安全问题*/
     public static void main(String[] args) {
-        WindowRunnable windowRunnable = new WindowRunnable();
+        WindowRunnable1 windowRunnable = new WindowRunnable1();
 
         Thread window1 = new Thread(windowRunnable);
         Thread window2 = new Thread(windowRunnable);
