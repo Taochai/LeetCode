@@ -10,11 +10,12 @@ import java.lang.reflect.Proxy;
  * */
 public class dynamicProxyUsingJDK {
     public static void main(String[] args) {
-        UserImpl user = new UserImpl();
+        User user = new UserImpl();
 
         User proxyInstance = (User) Proxy.newProxyInstance(user.getClass().getClassLoader(), user.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                System.out.println("method = " + method);
                 System.out.println("enhance1 ..................");
                 method.invoke(user, args);
                 System.out.println("enhance2 ..................");
@@ -23,6 +24,7 @@ public class dynamicProxyUsingJDK {
         });
 
         proxyInstance.hello();
+        proxyInstance.work();
     }
 }
 

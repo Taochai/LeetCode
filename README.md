@@ -46,6 +46,7 @@ java三种代理模式
            User proxyInstance = (User)Proxy.newProxyInstance(user.getClass().getClassLoader(), user.getClass().getInterfaces(), new InvocationHandler() {
                @Override
                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                   System.out.println("method = " + method);
                    System.out.println("enhance1 ..................");
                    method.invoke(user, args);
                    System.out.println("enhance2 ..................");
@@ -54,11 +55,13 @@ java三种代理模式
            });
    
            proxyInstance.hello();
+           proxyInstance.work();
        }
    }
    
    interface User {
        void hello();
+       void work();
    }
    
    class UserImpl implements User {
@@ -66,6 +69,10 @@ java三种代理模式
        @Override
        public void hello() {
            System.out.println("hello user ..............");
+       }
+     	@Override
+       public void work() {
+           System.out.println("user work ...................hard");
        }
    }
    ```
@@ -121,11 +128,12 @@ java三种代理模式
    
      public class dynamicProxyUsingCglib {
          public static void main(String[] args) {
-             UserImpl user = new UserImpl();
+             User user = new UserImpl();
              ProxyFactory proxyFactory = new ProxyFactory(user);
              UserImpl proxyInstance = (UserImpl)proxyFactory.getProxyInstance();
              proxyInstance.hello();
-         }
+             proxyInstance.work();
+       }
      }
    ```
 
@@ -211,7 +219,7 @@ java三种代理模式
 
 ### 创建线程
 
-1. extends Thread
+1. **extends Thread**
 
 - One is to declare a class to be a subclass of Thread.
 
@@ -243,7 +251,7 @@ An instance of the subclass can then be allocated and started.
 
 start()：开启新的线程 + 执行run()方法
 
-2. implement runnable
+2. **implement runnable**
 
 - Declare a class that implements the Runnable interface.
 
@@ -279,18 +287,15 @@ The following code would then create a thread and start it running:
 - 共享数据
 
 3. **Implements Callable**(JDK5.0)
+1. 有返回值
 
-    1. 有返回值
+2. 可以抛异常
 
-    2. 可以抛异常
+3. 支持范型的返回值
 
-    3. 支持范型的返回值
-
-    4. 需要借助FutureTask类，比如获取返回结果
+4. 需要借助FutureTask类，比如获取返回结果
 
 ```java
-      package basicKnowledge.multiThread;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -354,12 +359,13 @@ synchronized(同步监视器){
         }
 ```
 
-同步监视器：锁. 任何一个类的对象，都可以充当锁. 多个线程必须共用一把锁
+同步监视器：锁. 任何一个类的对象，都可以充当锁. 多个线程必须共用一把锁.
+
+xxx.class也是一个Class类的对象
 
 ```java
   //存在线程安全问题，重票
 private static int ticket=100;
-
 @Override
 public void run(){
         while(true){
@@ -376,6 +382,7 @@ synchronized (Window.class){
         }
         }
         }
+
 ```
 
 *Window.class 是Class的对象*, 并且只会加载一次。
@@ -617,7 +624,8 @@ This allows for different logging frameworks to coexist. It also helps migrate f
 
   ```java
   import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+  import org.slf4j.LoggerFactory;
+  ```
 
 /*
  * slf4j + logback
