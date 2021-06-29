@@ -1,18 +1,44 @@
-import leetcode.Leetcode718;
+import java.util.ArrayList;
 
 public class test {
 
 
-    public static void main(String[] args) {
-        int[] arr1 = new int[]{1,2,3,2,1};
-        int[] arr2 = new int[]{3,2,1,4,7};
-        Leetcode718 test = new Leetcode718();
-        //test file
+    public static void main(String[] args) throws RuntimeException {
+        ArrayList<Integer> array = new ArrayList<>();
+        array.add(123);
+        array.add("123123");
+
+        ArrayList<String> array1 = new ArrayList<>();
+
+
+        test test = new test();
+        try {
+            test.func1();
+            test.func2();
+
+        } catch (Exception e) {
+            System.out.println("***********" + e);
+        }
     }
 
+    public int func1() throws ChildException {
+        func2();
+        return 1;
+    }
+
+    public int func2() {
+//        throw new ParentException();
+        return 2;
+    }
 
 }
 
+class ParentException extends Exception {
+}
+
+class ChildException extends ParentException {
+
+}
 
 
 
